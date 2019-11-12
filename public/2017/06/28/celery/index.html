@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>练习用原生javascript编写与javascript数组方法slice功能一样的函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="鉴于公司项目及业务发展，技术人员从几人到如今几十人，后端团队技术人员日益剧增，可是随着项目人员的增长，大多研发人员及相关人员经常需要到测试环境使用 MySQL 数据库，比如移动端、测试、产品，然而他们需要普及 MySQL 知识点及性能优化的知识，其实性能优化的目标是针对后端研发人员及一些资深的前端人员，可能会从如下大的知识点讲解。 一、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;06&#x2F;28&#x2F;celery&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="鉴于公司项目及业务发展，技术人员从几人到如今几十人，后端团队技术人员日益剧增，可是随着项目人员的增长，大多研发人员及相关人员经常需要到测试环境使用 MySQL 数据库，比如移动端、测试、产品，然而他们需要普及 MySQL 知识点及性能优化的知识，其实性能优化的目标是针对后端研发人员及一些资深的前端人员，可能会从如下大的知识点讲解。 一、">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-07T14:50:54.194Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-celery" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/06/28/celery/" class="article-date">
+	  <time datetime="2017-06-28T13:01:40.000Z" itemprop="datePublished">June 28, 2017</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <html>
+
+<div class="mark_content art_article">
+                            <p>鉴于公司项目及业务发展，技术人员从几人到如今几十人，后端团队技术人员日益剧增，可是随着项目人员的增长，大多研发人员及相关人员经常需要到测试环境使用 MySQL 数据库，比如移动端、测试、产品，然而他们需要普及 MySQL 知识点及性能优化的知识，其实性能优化的目标是针对后端研发人员及一些资深的前端人员，可能会从如下大的知识点讲解。</p>
+<h3>一、安装说明</h3>
+<p>首先学习数据库，当然是安装软件。千里之行，始于足下，如果连安装都不会，如何进行后续的入门学习。可是对于安装也有不同方式，比如 RPM 和源码编译安装呢。</p>
+<h4>1.1 RPM 安装包和 Tar 安装包的区别？</h4>
+<p>RPM 直接安装，Tar 属于源码安装，可以设置更多的参数，可以和系统进行更紧密的优化。举个例子，RPM 是 180/96、185/100 之类的标准版型，Tar 源码安装类似于私人定制，量体裁衣的。其实个人觉得 RPM 安装适合小白入门，简单了解下 MySQL，不用做过多安装上的了解，然而源码编译安装适合比如经常跟 MySQL 打交道的工程师，比如 web 研发人员、c++ 工程师等，总不能只是知道如何简单的使用和 curd，其实对于技术人员的纵向知识体系打造是不好的，其实源码编译安装，还可能自己尝试些具体参数的配置。关于 MySQL 官方下载地址：</p>
+<blockquote>
+  <p><a href="https://dev.mysql.com/downloads/mysql/?utm_source=so&amp;utm_source=so" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
+</blockquote>
+<h4>1.2 安装后需要配置哪些内容？</h4>
+<p>不管 RPM 还是源码编译安装后，有些东西必须要设置：</p>
+<ul>
+<li><p>root 初始密码问题：必须设置密码，如果是自己玩还好，如果是线上系统必须设置密码，要不然就是裸跑系统。</p></li>
+<li><p>默认安装后会在指定文件中生成，如果忘记或找不到可以对 root 密码进行强制修改：</p>
+<p>mysqld_safe –skip-grant-tables 2&amp; </p></li>
+<li><p>用户远程访问问题：从安全性角度默认不允许远程访问，可以进行配置，允许远程访问，但是要注意安全性规范。</p>
+<p>grant all privileges on . to ‘root’@’%’ identified by’Password’; 
+flush privileges;</p></li>
+<li><p>UTF-8 编码问题： 关于字符集的问题，可能有些技术人员初次学习数据库时或者初次从事研发工作时，偶尔会碰到，为什么前端信息是正常录入，写入数据库时，变成了乱码？查看数据库的编码方式命令为：</p>
+<p>show variables like 'character%';</p>
+<p>参数说明：
+character<em>set</em>client为客户端编码方式；
+character<em>set</em>connection为建立连接使用的编码；
+character<em>set</em>database数据库的编码；
+character<em>set</em>results结果集的编码；
+character<em>set</em>server数据库务器的编码；</p></li>
+</ul>
+<h4>1.3 my.cnf 文件初始需要配置哪些内容？</h4>
+<ul>
+<li><p>数据文件位置： 确保数据不会把磁盘空间写满，如果有 ssd，可以充分利用 IO 优势。</p></li>
+<li><p>日志文件位置： 快速定位错误日志的位置，根据日志排除错误的能力，是程序员的第一生产力。</p></li>
+<li><p>其他基础参数</p></li>
+<li><p>Myisam系列参数（表级锁）：事务--锁--？</p>
+<p>myisam<em>sort</em>buffer<em>size = 128M   
+myisam</em>max<em>sort</em>file<em>size = 10G   
+myisam</em>max<em>extra</em>sort<em>file</em>size = 10G
+myisam<em>repair</em>threads = 1<br>
+myisam_recover   </p></li>
+<li><p>InnoDB系统参数（行级锁？）：</p>
+<p>innodb<em>additional</em>mem<em>pool</em>size = 16M<br>
+innodb<em>buffer</em>pool<em>size = 2048M   
+innodb</em>data<em>file</em>path = ibdata1:1024M:autoextend<br>
+innodb<em>file</em>io<em>threads = 4   
+innodb</em>thread<em>concurrency = 8   
+innodb</em>flush<em>log</em>at<em>trx</em>commit = 2<br>
+innodb<em>log</em>buffer<em>size = 16M  
+innodb</em>log<em>file</em>size = 128M<br>
+innodb<em>log</em>files<em>in</em>group = 3<br>
+innodb<em>max</em>dirty<em>pages</em>pct = 90<br>
+innodb<em>lock</em>wait<em>timeout = 120   
+innodb</em>file<em>per</em>table = 0 </p></li>
+<li><p>其他参数</p>
+<p>[client]
+port = 3306
+socket =
+                        </p></li></ul></div>
+</html>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+            
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2017/06/28/celery/" data-title="练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数" data-url="http://yoursite.com/2017/06/28/celery/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+	<link rel="stylesheet" href="/css/comment-ds.css">
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/07/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-io%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用hexo搭建github.io博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/28/%E7%BB%83%E4%B9%A0%E7%94%A8%E5%8E%9F%E7%94%9FJavaScript%E7%BC%96%E5%86%99%E4%B8%8EJavaScript%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95slice%E5%8A%9F%E8%83%BD%E4%B8%80%E6%A0%B7%E7%9A%84%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">一、安装说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 RPM 安装包和 Tar 安装包的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 安装后需要配置哪些内容？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 my.cnf 文件初始需要配置哪些内容？</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

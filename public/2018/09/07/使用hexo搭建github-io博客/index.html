@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>使用hexo搭建github.io博客 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Introduction 回顾一下我三年搭建博客的历程，最初是选择wordpress，Wordpress全部由php编写，数组库采用MySQL。优点：用户只需要将Wordpress的源代码复制到网站根目录下，然后访问网站，之后的安装操作全部在浏览器上完成。即使不是软件行业的人，也可以在几分钟之内完成安装工作。甚至很多虚拟主机供应商都提供了Wordpress的一键式安装工具。用户连上传文件的步骤都省">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo搭建github.io博客">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;09&#x2F;07&#x2F;%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-io%E5%8D%9A%E5%AE%A2&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Introduction 回顾一下我三年搭建博客的历程，最初是选择wordpress，Wordpress全部由php编写，数组库采用MySQL。优点：用户只需要将Wordpress的源代码复制到网站根目录下，然后访问网站，之后的安装操作全部在浏览器上完成。即使不是软件行业的人，也可以在几分钟之内完成安装工作。甚至很多虚拟主机供应商都提供了Wordpress的一键式安装工具。用户连上传文件的步骤都省">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;22697565&#x2F;45201116-7ca05e00-b2a6-11e8-8e6c-8658ee49dc8f.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;22697565&#x2F;45201238-1e27af80-b2a7-11e8-8eb4-ad31cfbaf6f6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;22697565&#x2F;45201369-a73ee680-b2a7-11e8-9c20-8a347e477f0b.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;22697565&#x2F;45201445-f7b64400-b2a7-11e8-91d2-704c587815a6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;22697565&#x2F;45201608-c0946280-b2a8-11e8-94f4-f091267ce8d7.png">
+<meta property="og:updated_time" content="2019-11-07T14:30:57.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;22697565&#x2F;45201116-7ca05e00-b2a6-11e8-8e6c-8658ee49dc8f.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-使用hexo搭建github-io博客" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      使用hexo搭建github.io博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/07/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-io%E5%8D%9A%E5%AE%A2/" class="article-date">
+	  <time datetime="2018-09-07T02:57:11.000Z" itemprop="datePublished">September 7, 2018</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><blockquote>
+<p>回顾一下我三年搭建博客的历程，最初是选择wordpress，Wordpress全部由php编写，数组库采用MySQL。优点：用户只需要将Wordpress的源代码复制到网站根目录下，然后访问网站，之后的安装操作全部在浏览器上完成。即使不是软件行业的人，也可以在几分钟之内完成安装工作。甚至很多虚拟主机供应商都提供了Wordpress的一键式安装工具。用户连上传文件的步骤都省了。缺点：项目太臃肿了，Wordpress耗损CPU严重，不容易操作，运行稍慢。尤其是后期文章数目较多的时候，想要登陆下网站的管理后台，心态简直是抓狂的。loading了好久，有时候还会失败，发一篇文章也很费劲，索性就不维护了。<br>后来在github网站上找到一个vue模板：<a href="https://github.com/ye63/vue-blog-use-github-issues" target="_blank" rel="noopener">github地址</a>和<a href="https://ye63.com/jy/" target="_blank" rel="noopener">demo预览</a>二次开发了一下，的确是实现了很多功能，也挺轻便的，样式也可以自定义，博客可以直接写在github的issue，很方便，用了三个月后才发现百度的搜索引擎居然只收录了首页，搜索引擎的基础爬虫的原理就是抓取你的url，然后获取你的html源代码并解析。 而你的页面通常用了vue等js的数据绑定机制来展示页面数据，爬虫获取到的html是你的模型页面而不是最终数据的渲染页面，所以说用js来渲染数据对seo并不友好。而且github api在国内访问速度也没有想象中那么快，可能是github的CDN被墙屏了。<br> 使用github.io可以搭建一个自己的博客,把静态文件项目托管到github上,可以写博客,可以使用markdown语法,也可以展示作品.灵活性高.但是有较大的难度,但是这对于一个熟悉git操作的前端开发工程师来说，都不算什么的。重点是hexo和github.io的域名和服务器都是<strong>免费</strong>的。当然也可以选择用自己的服务器和域名。</p>
+</blockquote>
+<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="安装-node-git，注册好github账号"><a href="#安装-node-git，注册好github账号" class="headerlink" title="安装 node,git，注册好github账号"></a>安装 node,git，注册好github账号</h4><p> (网站有很多教程，安装方法这里就不详细展开了，<strong>注意:github账号用户名一定不能有大写.</strong>)</p>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo:"></a>安装hexo:</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建hexo文件夹"><a href="#创建hexo文件夹" class="headerlink" title="创建hexo文件夹:"></a>创建hexo文件夹:</h4><p>cmd窗口切换到对应的目录下,然后执行: <code>hexo init</code><br>也可以在 E:\hexo 下右键,选择git bash,在窗口中执行<code>hexo init</code><br>自动安装了需要的文件.</p>
+<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖:"></a>安装依赖:</h4><p>继续执行: <code>npm install</code></p>
+<h4 id="完成本地安装"><a href="#完成本地安装" class="headerlink" title="完成本地安装:"></a>完成本地安装:</h4><p>继续在 <code>E:\hexo</code> 下执行:  <code>hexo generate</code></p>
+<p>继续执行: <code>hexo server</code></p>
+<p>然后在打开浏览器 <code>localhost:4000</code> ,就可以看到,本地已经安装好了.</p>
+<h4 id="在github上创建博客仓库"><a href="#在github上创建博客仓库" class="headerlink" title="在github上创建博客仓库:"></a>在github上创建博客仓库:</h4><p><img src="https://user-images.githubusercontent.com/22697565/45201116-7ca05e00-b2a6-11e8-8e6c-8658ee49dc8f.png" alt="image"><br> 跳转的后如下填写:(其中Repository name的格式是 ‘用户名’.github.io  ),然后点创建仓库，Repository name必须和用户名（Owner）一致，不能有大写字母<br><img src="https://user-images.githubusercontent.com/22697565/45201238-1e27af80-b2a7-11e8-8eb4-ad31cfbaf6f6.png" alt="image"><br><img src="https://user-images.githubusercontent.com/22697565/45201369-a73ee680-b2a7-11e8-9c20-8a347e477f0b.png" alt="image"></p>
+<h4 id="创建SSH-keys"><a href="#创建SSH-keys" class="headerlink" title="创建SSH keys"></a>创建SSH keys</h4><h5 id="监测是否有已经存在的SSH-keys"><a href="#监测是否有已经存在的SSH-keys" class="headerlink" title="监测是否有已经存在的SSH keys:"></a>监测是否有已经存在的SSH keys:</h5><p>打开 <code>git bash</code> 终端(可以在  E:\hexo 下右键打开,也可以直接在开始菜单里打开)</p>
+<p>执行:  <code>$ ls -al ~/.ssh</code><br><img src="https://user-images.githubusercontent.com/22697565/45201445-f7b64400-b2a7-11e8-91d2-704c587815a6.png" alt="image"></p>
+<h5 id="如果没有的话-就生成一个SSH-keys-写自己的邮箱"><a href="#如果没有的话-就生成一个SSH-keys-写自己的邮箱" class="headerlink" title="如果没有的话,就生成一个SSH keys: 写自己的邮箱"></a>如果没有的话,就生成一个SSH keys: 写自己的邮箱</h5><p><code>$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code></p>
+<p>然后会出现:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/you/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
+
+<p>就是让你输入SSH keys要保存在哪里,一般不用改,就直接回车就好了.输入一个密码,这个密码后面会用到,所以要记住咯</p>
+<h5 id="保存SSH-keys"><a href="#保存SSH-keys" class="headerlink" title="保存SSH keys:"></a>保存SSH keys:</h5><p>创建成功后,他会提示你SSH keys保存在哪里:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in /Users/you/.ssh/id_rsa.</span><br><span class="line"></span><br><span class="line"># Your public key has been saved in /Users/you/.ssh/id_rsa.pub.</span><br><span class="line"></span><br><span class="line"># The key fingerprint is:</span><br><span class="line"></span><br><span class="line"># 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</span><br></pre></td></tr></table></figure>
+<h5 id="找到SSH-keys"><a href="#找到SSH-keys" class="headerlink" title="找到SSH keys:"></a>找到SSH keys:</h5><p>根据上一步里告诉你的路径,找到保存SSH keys的地方,我的是在 C:\Users\2000104591.ssh</p>
+<p>其中 id_rsa.pub 就是SSH keys 如果为了防止以后找不到,可以把他们自己另存到其它地方</p>
+<h4 id="为github仓库添加SSH-keys"><a href="#为github仓库添加SSH-keys" class="headerlink" title="为github仓库添加SSH keys"></a>为github仓库添加SSH keys</h4><p>然后把创建的id_rsa.pub里的内容复制到Key里去,Title部分随便填. 点击’Add key’</p>
+<p>添加的过程中,还要再输入一次github的密码<br><img src="https://user-images.githubusercontent.com/22697565/45201608-c0946280-b2a8-11e8-94f4-f091267ce8d7.png" alt="image"></p>
+<h4 id="配置-config-yml文件并发布"><a href="#配置-config-yml文件并发布" class="headerlink" title="配置_config.yml文件并发布:"></a>配置_config.yml文件并发布:</h4><p>在 <code>E:\hexo</code>(文件根目录下) 下,有一个文件叫 _config.yml ,打开它,拉到最底下,做如下修改:　</p>
+<p>然后再执行:</p>
+<p><code>hexo generate</code></p>
+<p><code>hexo deploy</code></p>
+<p>然后访问: <a href="https://ye63.github.io/" target="_blank" rel="noopener">https://ye63.github.io/</a> (用户名改成自己的),就可以看到了.</p>
+<h4 id="快捷命令"><a href="#快捷命令" class="headerlink" title="快捷命令"></a>快捷命令</h4><h5 id="hexo-新建一篇文章给它添加分类和标签"><a href="#hexo-新建一篇文章给它添加分类和标签" class="headerlink" title="hexo 新建一篇文章给它添加分类和标签:"></a>hexo 新建一篇文章给它添加分类和标签:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;移动端限制input框只能输入数字&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="通过mou编辑器打开：添加tags和categories"><a href="#通过mou编辑器打开：添加tags和categories" class="headerlink" title="通过mou编辑器打开：添加tags和categories"></a>通过mou编辑器打开：添加tags和categories</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: title #文章標題</span><br><span class="line">date: 2016-06-01 23:47:44 #文章生成時間</span><br><span class="line">categories: &quot;Hexo教程&quot; #文章分類目錄 可以省略</span><br><span class="line">tags: #文章标签 可以省略</span><br><span class="line">     - 标签1</span><br><span class="line">     - 标签2</span><br><span class="line">description: #你對本頁的描述 可以省略</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h5 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h5 id="创建新页面"><a href="#创建新页面" class="headerlink" title="创建新页面"></a>创建新页面</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Hexo%E6%95%99%E7%A8%8B/">Hexo教程</a>
+
+      
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+            
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2018/09/07/使用hexo搭建github-io博客/" data-title="使用hexo搭建github.io博客" data-url="http://yoursite.com/2018/09/07/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-io%E5%8D%9A%E5%AE%A2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+	<link rel="stylesheet" href="/css/comment-ds.css">
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/21/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83-used-by-frank/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端开发规范-used by frank
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/28/celery/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">2.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-node-git，注册好github账号"><span class="nav-number">2.1.</span> <span class="nav-text">安装 node,git，注册好github账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.2.</span> <span class="nav-text">安装hexo:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建hexo文件夹"><span class="nav-number">2.3.</span> <span class="nav-text">创建hexo文件夹:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖"><span class="nav-number">2.4.</span> <span class="nav-text">安装依赖:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完成本地安装"><span class="nav-number">2.5.</span> <span class="nav-text">完成本地安装:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在github上创建博客仓库"><span class="nav-number">2.6.</span> <span class="nav-text">在github上创建博客仓库:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建SSH-keys"><span class="nav-number">2.7.</span> <span class="nav-text">创建SSH keys</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#监测是否有已经存在的SSH-keys"><span class="nav-number">2.7.1.</span> <span class="nav-text">监测是否有已经存在的SSH keys:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如果没有的话-就生成一个SSH-keys-写自己的邮箱"><span class="nav-number">2.7.2.</span> <span class="nav-text">如果没有的话,就生成一个SSH keys: 写自己的邮箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#保存SSH-keys"><span class="nav-number">2.7.3.</span> <span class="nav-text">保存SSH keys:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#找到SSH-keys"><span class="nav-number">2.7.4.</span> <span class="nav-text">找到SSH keys:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为github仓库添加SSH-keys"><span class="nav-number">2.8.</span> <span class="nav-text">为github仓库添加SSH keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置-config-yml文件并发布"><span class="nav-number">2.9.</span> <span class="nav-text">配置_config.yml文件并发布:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快捷命令"><span class="nav-number">2.10.</span> <span class="nav-text">快捷命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo-新建一篇文章给它添加分类和标签"><span class="nav-number">2.10.1.</span> <span class="nav-text">hexo 新建一篇文章给它添加分类和标签:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过mou编辑器打开：添加tags和categories"><span class="nav-number">2.10.2.</span> <span class="nav-text">通过mou编辑器打开：添加tags和categories</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#发布"><span class="nav-number">2.10.3.</span> <span class="nav-text">发布</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建新页面"><span class="nav-number">2.10.4.</span> <span class="nav-text">创建新页面</span></a></li></ol></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

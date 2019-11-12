@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body>
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main">
+  
+    <article id="post-使用autohotkey修改方向键、回车和启动程序"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/04/07/%E4%BD%BF%E7%94%A8autohotkey%E4%BF%AE%E6%94%B9%E6%96%B9%E5%90%91%E9%94%AE%E3%80%81%E5%9B%9E%E8%BD%A6%E5%92%8C%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/">使用autohotkey修改方向键、回车和启动程序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/04/07/%E4%BD%BF%E7%94%A8autohotkey%E4%BF%AE%E6%94%B9%E6%96%B9%E5%90%91%E9%94%AE%E3%80%81%E5%9B%9E%E8%BD%A6%E5%92%8C%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/" class="article-date">
+	  <time datetime="2017-04-07T13:34:40.000Z" itemprop="datePublished">April 7, 2017</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://autohotkey.com/" target="_blank" rel="noopener">autohotkey官网</a></p>
+<p><a href="https://autohotkey.com/docs/AutoHotkey.htm" target="_blank" rel="noopener">autohotkey官方文档</a></p>
+<p><a href="http://ahkcn.sourceforge.net/docs/AutoHotkey.htm" target="_blank" rel="noopener">官方文档中文版</a></p>
+<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><ol>
+<li><p>下载并安装autohotkey。</p>
+</li>
+<li><p>在你觉得合适的地方鼠标右键-新建-autohotkey script（脚本）；或者创建一个别的文件，再把后缀改成ahk也可以</p>
+</li>
+<li><p>一个新建的ahk文档里面会有这些东西</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.</span><br><span class="line">; #Warn  ; Enable warnings to assist with detecting common errors.</span><br><span class="line">SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.</span><br><span class="line">SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.</span><br></pre></td></tr></table></figure>
+
+<p>不用管这些</p>
+</li>
+<li><p>在下面输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">!j::</span><br><span class="line">   Send, &#123;Down&#125;</span><br><span class="line">Return</span><br><span class="line"></span><br><span class="line">!l::</span><br><span class="line">   Send, &#123;Right&#125;</span><br><span class="line">Return</span><br><span class="line"></span><br><span class="line">!h::</span><br><span class="line">   Send, &#123;Left&#125;</span><br><span class="line">Return</span><br><span class="line"></span><br><span class="line">!k::</span><br><span class="line">   Send, &#123;Up&#125;</span><br><span class="line">Return</span><br></pre></td></tr></table></figure>
+
+<p>这几句话是把↑改成了alt+k；↓为alt+j；←为alt+h；→为alt+l。如果想用ctrl代替alt，就把<code>!</code> 换成<code>^</code> 。其他的<code>+</code> 代表shift，<code>#</code> 代表windows键，更详细的看<a href="http://ahkcn.sourceforge.net/docs/Hotkeys.htm" target="_blank" rel="noopener">这个</a>。如果不需要其他功能了，直接保存并关闭，跳到第 步。</p>
+</li>
+<li><p><strong>加入修改回车的功能</strong>。键盘左侧的Capslock（锁定大小写）键使用频率相对还是不高的，而回车键的位置又有点坑，改之。直接复制这段这两行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$CapsLock::Enter</span><br><span class="line"></span><br><span class="line">LAlt &amp; Capslock::SetCapsLockState, % GetKeyState(&quot;CapsLock&quot;, &quot;T&quot;) ? &quot;Off&quot; : &quot;On&quot;</span><br></pre></td></tr></table></figure>
+
+<p>这样，左侧的Capslock键就成了回车，以后小量的大写字母用shift+字母，如果有大量的大写字母的输入，用<code>alt+Capslock</code> ，跟之前Capslock是一样的。</p>
+</li>
+<li><p>autohotkey也可以用快捷键启动软件，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!o::</span><br><span class="line">   Run, C:\Program Files\Everything\Everything.exe</span><br><span class="line">Return</span><br></pre></td></tr></table></figure>
+
+<p>现在<code>alt+o</code>就是启动everything的快捷键了。同样的，如果想用ctrl代替alt，就把<code>!</code> 换成<code>^</code> 。其他的<code>+</code> 代表shift，<code>#</code> 代表windows键，更详细的看<a href="http://ahkcn.sourceforge.net/docs/Hotkeys.htm" target="_blank" rel="noopener">这个</a>。如果想启动其他的软件，就把上面的路径换成你想启动的那个软件的路径机就可以了。</p>
+</li>
+<li><p>保存，关闭</p>
+</li>
+<li><p>在编辑好的文件点击鼠标右键，选择编译脚本，也可能是Compile script，也可能是Compile脚本，都是一样的。编译之后就会生成一个<code>.exe</code>的文件，把这个文件放到开机启动文件夹中（C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp），每次开机就可以自动启动了。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-如何在网络公共场合发帖提问"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/02/27/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E7%BB%9C%E5%85%AC%E5%85%B1%E5%9C%BA%E5%90%88%E5%8F%91%E5%B8%96%E6%8F%90%E9%97%AE/">如何在网络公共场合发帖提问</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/02/27/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E7%BB%9C%E5%85%AC%E5%85%B1%E5%9C%BA%E5%90%88%E5%8F%91%E5%B8%96%E6%8F%90%E9%97%AE/" class="article-date">
+	  <time datetime="2017-02-27T13:34:40.000Z" itemprop="datePublished">February 27, 2017</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文<a href="http://www.catb.org/esr/faqs/smart-questions.html" target="_blank" rel="noopener">《How To Ask Questions The Smart Way》</a>的学习笔记，仅供参考。</p>
+<p>概括的说就是在提问之前先<strong>自己尝试解决问题</strong>，未能解决，再提问。</p>
+<p>提问的根本原则是：让别人<strong>指点你</strong>，而不是让别人直接<strong>给你</strong>。</p>
+<h2 id="先做好自己的功课"><a href="#先做好自己的功课" class="headerlink" title="先做好自己的功课"></a>先做好自己的功课</h2><p>提问之前你要先做好下面的事情。</p>
+<ol>
+<li>用google搜索。至于为什么要用google和<a href="https://b.xinshengdaxue.com/C04.html" target="_blank" rel="noopener">如何用google</a>，大家先去google一下吧。</li>
+<li>阅读软件的使用手册。</li>
+<li>阅读相关软件的FAQ。</li>
+<li>在论坛中搜索。</li>
+<li>自己检查和试验。</li>
+</ol>
+<h2 id="提问的时候"><a href="#提问的时候" class="headerlink" title="提问的时候"></a>提问的时候</h2><p>请先表明你已经上一部分所说的那里尝试和努力，</p>
+<p>如果你的问题是<code>可以不可以给点提示？</code>、<code>我的这个例子里面缺了什么？</code>或者<code>我应该检查什么地方？</code> ，那恭喜你已经入门了，如果你一般都是直接问<code>请把我需要的确切过程发给我</code>，那你可能需要更加认真的往下看。</p>
+<h3 id="在合适的地方提出合适的问题"><a href="#在合适的地方提出合适的问题" class="headerlink" title="在合适的地方提出合适的问题"></a>在合适的地方提出合适的问题</h3><p>例如，不要母婴论坛问编程的问题（相信没有人会这样做），不要在全是高手的地方问初级问题，不要重复贴出同样的问题，不要向跟你不熟也没有义务帮助你的人发送私人邮件。</p>
+<h4 id="关于网络论坛"><a href="#关于网络论坛" class="headerlink" title="关于网络论坛"></a>关于网络论坛</h4><p>搞清楚那个论坛是干什么的，搞清楚论坛里面每个版块是干什么的。</p>
+<h3 id="写好标题"><a href="#写好标题" class="headerlink" title="写好标题"></a>写好标题</h3><p>好标题=对象+偏差</p>
+<p><strong>对象</strong>是出问题的那个东西</p>
+<p><strong>偏差</strong>是指与你期望不一致的地方</p>
+<p>例如：</p>
+<blockquote>
+<p>愚蠢的描述：救命啊！我的电脑不能播放视频啦！</p>
+<p>聪明的描述；X.org 6.8.1的鼠标光标变形，某品牌显卡 MV1005 晶片組。</p>
+<p>更聪明的描述：X.org 6.8.1的鼠标光，在某品牌显卡 MV1005 晶片組环境下变形</p>
+</blockquote>
+<p>最后一个例子<code>变形</code>就是偏差，前面的就是对象。</p>
+<h3 id="描述问题"><a href="#描述问题" class="headerlink" title="描述问题"></a>描述问题</h3><h4 id="简洁有效"><a href="#简洁有效" class="headerlink" title="简洁有效"></a>简洁有效</h4><ul>
+<li>按时间顺序仔細、清楚地描述你的问题或bug的<strong>症狀</strong>，不要说你自己的<strong>猜测</strong>。</li>
+<li>描述问题发生的环境（电脑配置、操作系统、软件、以及相关信息），提供经销商的发行版和版本号。</li>
+<li>描述在提问前你是怎样去研究和理解這这问题的。</li>
+<li>描述在提问前为确定问题而采取的诊断步骤。</li>
+<li>描述最近做过什么可能相关的硬件或软件变更。</li>
+<li>如果可能的提供一个可以<code>再现这个问题的既定环境</code>的方法</li>
+</ul>
+<p>如果是关于代码的问题，注意不要把你上百行的代码全部贴出来，只要贴出出现问题的那个部分就可以了。比如<code>在第七行以后，我希望他得出&lt;x&gt;，但实际的结果却是&lt;y&gt;。</code></p>
+<p>例子：</p>
+<blockquote>
+<p><strong>愚蠢的描述：</strong>我在编译内核时接连遇到SIG11错误，怀疑主板上的某根电路丝断了，找到它们的最好办法是什么？</p>
+<p><strong>聪明的描述</strong> ：我组装的电脑（K6/233 CPU、FIC-PA2007 主板威盛 Apollo VP2 芯片组、Corsair PC133 SDRAM 256Mb 内存）最近在开机20分钟左右、做内核编译时频繁地报错，提示SIG11 ，但在头20分钟内从不出问题。重启动不会复位时钟，但会整夜关机。更换所有内存未解决问题，相关的典型编译会话日志附后。</p>
+</blockquote>
+<h4 id="说出目的，而不是你操作过程中的某一个步骤"><a href="#说出目的，而不是你操作过程中的某一个步骤" class="headerlink" title="说出目的，而不是你操作过程中的某一个步骤"></a>说出<strong>目的</strong>，而不是你操作过程中的某一个步骤</h4><p><strong>在开头就直接说你的目的是什么 ，然后再陈述你的问题。</strong></p>
+<p><strong>经常遇到这样的情况：寻求帮助的人有更进一步的目的，只是在前进的过程中遇到了阻碍，他们提出的问题只针对当下的步骤。其实很有可能不是现在的这一步出了问题，而是你的路径根本就错了。</strong></p>
+<blockquote>
+<p><strong>愚蠢的问题</strong>：我怎样才能让某图形程序的颜色拾取器取得十六进制的RGB值？</p>
+<p><strong>聪明的问题</strong> ：我正试着用自己选定数值的颜色替换一幅图片的色表，我现在知道的唯一方法是编辑每个表槽，但却无法让某图形程序的颜色拾取器取得十六进制的RGB值。</p>
+</blockquote>
+<h3 id="语句要清晰、正确、精炼且表达通顺"><a href="#语句要清晰、正确、精炼且表达通顺" class="headerlink" title="语句要清晰、正确、精炼且表达通顺"></a>语句要清晰、正确、精炼且表达通顺</h3><p>写东西粗心的人，思考和编程也好不到哪去。</p>
+<p>花一点时间组织语言，使问题能够正确、清晰地表达出来。</p>
+<p>如果你用英语提问，那你要注意拼写、标点和大小写，不要用“u”代替“you”这种简化。</p>
+<p>如果你的英语水平不是特别好，在提问的时候可以加上这些。</p>
+<blockquote>
+<ul>
+<li>English is not my native language; please excuse typing errors.</li>
+<li>If you speak $LANGUAGE, please email/PM me; I may need assistance translating my question.</li>
+<li>I am familiar with the technical terms, but some slang expressions and idioms are difficult for me.</li>
+<li>I’ve posted my question in $LANGUAGE and English. I’ll be glad to translate responses, if you only use one or the other.</li>
+</ul>
+</blockquote>
+<p>不要用无意义的话结束提问，比如<code>你能帮助我吗</code>或者<code>这有答案吗？</code> 。一般来说，避免用<code>是或否</code> 、<code>对或错</code>、 <code>有或没有</code>类型的问句。<strong>另外</strong>，无论你多着急，也不要在标题里面写“急求”“紧急”等词语。</p>
+<h3 id="解决问题后记得回复"><a href="#解决问题后记得回复" class="headerlink" title="解决问题后记得回复"></a>解决问题后记得回复</h3><p>问题解决之后向所有人发声明说明问题已经解决并感谢所有人。</p>
+<p>方式是在标题里面加上<code>已修正</code>、<code>已解决</code>，这样做不但可以让可提供帮助的人不再浪费时间浏览你的问题，也可令有相同问题的人也会更加容易找到你。</p>
+<p>之后写一个<strong>简单</strong>的总结，一个<code>你好，原来时网络线出了问题，谢谢大家！</code>就比什么都不说要好。也可以说一下问题是怎么解决的。</p>
+<p>列出那些帮助过你的名字。</p>
+<h2 id="对于别人的回复"><a href="#对于别人的回复" class="headerlink" title="对于别人的回复"></a>对于别人的回复</h2><p>如果看不懂别人的回答，先不要急着回复提问，再执行一次<code>提问之前</code>的步骤。</p>
+<h4 id="如果还是不明白…"><a href="#如果还是不明白…" class="headerlink" title="如果还是不明白…"></a>如果还是不明白…</h4><p>回复的时候要加上自己已经学到了什么。</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+          <aside id="sidebar">
+  
+    <div class="widget-wrap" style="margin: 20px 0;">
+	<div id="search-form-wrap">
+
+    <form class="search-form">
+        <label style="width: 75%;">
+            <span class="screen-reader-text">Search for:</span>
+            <input type="search" class="search-field" style="height: 42px;" placeholder=" Search…" value="" name="s" title="Search for:">
+        </label>
+        <input type="submit" class="search-form-submit" value="Search">
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Connect With Us</h3>
+    <div class="widget widget_athemes_social_icons">
+
+    	<ul class="clearfix widget-social-icons">   
+    	
+          
+     			  <li><a href="https://github.com/iTimeTraveler" target="_blank" rel="noopener" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
+          
+   		
+          
+     			  <li><a href="http://www.yoursite.com" target="_blank" rel="noopener" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
+          
+   		
+          
+     			  <li><a href="" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+          
+   		
+          
+     			  <li><a href="" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
+          
+   		
+          
+     			  <li><a href="" title="Google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> 
+          
+   		
+          
+     			  <li><a href="" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> 
+          
+   		
+          
+     			  <li><a href="" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li> 
+          
+   		
+          
+     			  <li><a href="" title="Flickr"><i class="fa fa-flickr" aria-hidden="true"></i></a></li> 
+          
+   		
+          
+            <li><a href="mailto:?subject=请联系我&body=我能帮你什么" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
+          
+   		
+   		</ul>
+
+
+   		<!--
+   		<ul class="clearfix widget-social-icons">   		
+   		<li class="widget-si-twitter"><a href="http://twitter.com" target="_blank" rel="noopener" title="Twitter"><i class="ico-twitter"></i></a></li> 
+		<li class="widget-si-facebook"><a href="http://facebook.com" target="_blank" rel="noopener" title="Facebook"><i class="ico-facebook"></i></a></li>
+			<li class="widget-si-gplus"><a href="http://plus.google.com" target="_blank" rel="noopener" title="Google+"><i class="ico-gplus"></i></a></li>
+			<li class="widget-si-pinterest"><a href="http://pinterest.com" target="_blank" rel="noopener" title="Pinterest"><i class="ico-pinterest"></i></a></li>
+			<li class="widget-si-flickr"><a href="http://flickr.com" target="_blank" rel="noopener" title="Flickr"><i class="ico-flickr"></i></a></li>
+			<li class="widget-si-instagram"><a href="http://instagram.com" target="_blank" rel="noopener" title="Instagram"><i class="ico-instagram"></i></a></li>
+		</ul> -->
+
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget_athemes_tabs">
+    <ul id="widget-tab" class="clearfix widget-tab-nav">
+      <li class="active"><a>Recent Posts</a></li>
+    </ul>
+    <div class="widget">
+      <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/10/08/redis%E5%85%A8%E8%A7%A3/">redis全解</a></h6>
+              <span>October 8, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/06/28/%E6%BB%91%E5%8A%A8%E5%8A%A0%E8%BD%BD/">滑动加载</a></h6>
+              <span>June 28, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/30/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%9C%80%E5%85%A8%E9%9D%A2%E8%AF%95%E9%A2%98/">前端开发最全面试题</a></h6>
+              <span>September 30, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/21/%E5%89%8D%E7%AB%AF%E5%91%A8%E5%88%8A-2018%E5%B9%B409%E6%9C%88%E7%AC%AC3%E5%91%A8/">前端周刊-2018年09月第3周</a></h6>
+              <span>September 21, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/21/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83-used-by-frank/">前端开发规范-used by frank</a></h6>
+              <span>September 21, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/09/07/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-io%E5%8D%9A%E5%AE%A2/">使用hexo搭建github.io博客</a></h6>
+              <span>September 7, 2018</span>
+            </div>
+
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo%E6%95%99%E7%A8%8B/">Hexo教程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%91%A8%E5%88%8A/">前端周刊</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E4%BA%AB/" rel="tag">分享</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">前端自动化</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%88%86%E4%BA%AB/" style="font-size: 20px;">分享</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96/" style="font-size: 10px;">前端自动化</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

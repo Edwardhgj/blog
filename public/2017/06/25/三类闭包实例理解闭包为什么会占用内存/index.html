@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>三类闭包实例理解闭包为什么会占用内存 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="在试图弄清这个问题之前，先要理解栈内存、堆内存和预处理。 占用内存，不会销毁的闭包实例例1：123456789var num = 12;function fn() &amp;#123;    var num = 100;    return function () &amp;#123;        console.log(num);    &amp;#125;&amp;#125;var f = fn();f();  例1的图示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三类闭包实例理解闭包为什么会占用内存">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;06&#x2F;25&#x2F;%E4%B8%89%E7%B1%BB%E9%97%AD%E5%8C%85%E5%AE%9E%E4%BE%8B%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%8D%A0%E7%94%A8%E5%86%85%E5%AD%98&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在试图弄清这个问题之前，先要理解栈内存、堆内存和预处理。 占用内存，不会销毁的闭包实例例1：123456789var num = 12;function fn() &amp;#123;    var num = 100;    return function () &amp;#123;        console.log(num);    &amp;#125;&amp;#125;var f = fn();f();  例1的图示">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;ws2.sinaimg.cn&#x2F;large&#x2F;006tNc79ly1fgxrucbxedj30uf0el40j.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ws4.sinaimg.cn&#x2F;large&#x2F;006tNc79ly1fgxs049ilwj30pt0eu0u7.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ws2.sinaimg.cn&#x2F;large&#x2F;006tNc79ly1fgxt61ar16j30ms0aymya.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ws4.sinaimg.cn&#x2F;large&#x2F;006tNc79gy1fgxsu3f7vtj30uv0djq4j.jpg">
+<meta property="og:updated_time" content="2019-11-07T14:30:57.552Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ws2.sinaimg.cn&#x2F;large&#x2F;006tNc79ly1fgxrucbxedj30uf0el40j.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-三类闭包实例理解闭包为什么会占用内存" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      三类闭包实例理解闭包为什么会占用内存
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/06/25/%E4%B8%89%E7%B1%BB%E9%97%AD%E5%8C%85%E5%AE%9E%E4%BE%8B%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%8D%A0%E7%94%A8%E5%86%85%E5%AD%98/" class="article-date">
+	  <time datetime="2017-06-25T14:16:54.000Z" itemprop="datePublished">June 25, 2017</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在试图弄清这个问题之前，先要理解<a href="https://zhuanyongxigua.github.io/2017/06/25/%E6%A0%88%E5%86%85%E5%AD%98%E3%80%81%E5%A0%86%E5%86%85%E5%AD%98%E5%92%8C%E9%A2%84%E5%A4%84%E7%90%86/" target="_blank" rel="noopener">栈内存、堆内存和预处理</a>。</p>
+<h2 id="占用内存，不会销毁的闭包实例"><a href="#占用内存，不会销毁的闭包实例" class="headerlink" title="占用内存，不会销毁的闭包实例"></a>占用内存，不会销毁的闭包实例</h2><h3 id="例1："><a href="#例1：" class="headerlink" title="例1："></a>例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var num = 12;</span><br><span class="line">function fn() &#123;</span><br><span class="line">    var num = 100;</span><br><span class="line">    return function () &#123;</span><br><span class="line">        console.log(num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var f = fn();</span><br><span class="line">f();</span><br></pre></td></tr></table></figure>
+
+<p>例1的图示</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fgxrucbxedj30uf0el40j.jpg" alt=""></p>
+<p><strong>未被占用的堆内存才会被销毁</strong></p>
+<p>所以，正如图中椭圆形关键点中说明的那样，堆内存xxxfff111被返回给了全局变量f，而全局变量只有在窗口关闭的时候才会销毁，<strong>因此堆内存xxxfff111将一直被占用而不会销毁</strong>，定义它的局部作用域A也不会被销毁。</p>
+<h3 id="例2"><a href="#例2" class="headerlink" title="例2"></a>例2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var oDiv = document.getElementById(&quot;div1&quot;);</span><br><span class="line">~function() &#123;</span><br><span class="line">    oDiv.onclick = function() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+
+<p>这段代码的特点是：私有作用域给DOM元素的事件绑定一个方法。</p>
+<p>例2的图示：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fgxs049ilwj30pt0eu0u7.jpg" alt=""></p>
+<p>正如图中椭圆形关键点所说，标签对象的属性里面会自带一个onclick的属性，未被赋值时其值为null。那么，在自执行函数执行的时候，其创建的作用域所占用的堆内存xxxfff111同样也会被全局的堆内存xxxfff000占用（这里要注意，是堆内存占用堆内存），所以堆内存xxxfff111和栈内存A都不会被销毁。</p>
+<h2 id="不占用内存，立即销毁的实例"><a href="#不占用内存，立即销毁的实例" class="headerlink" title="不占用内存，立即销毁的实例"></a>不占用内存，立即销毁的实例</h2><p>只需要将例1稍作修改。</p>
+<h3 id="例3："><a href="#例3：" class="headerlink" title="例3："></a>例3：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">    var num = 100;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        console.log(num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn();	//主要修改在这里</span><br></pre></td></tr></table></figure>
+
+<p>例3的图示</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fgxt61ar16j30ms0aymya.jpg" alt=""></p>
+<p>由于在函数fn中，xxxfff111是被return的，所以栈内存A的预解释不会处理xxxfff111，它只在fn函数执行的时候才会生成，而函数fn的栈内存A每次被执行之后都会被销毁。</p>
+<h2 id="暂时占用内存，延时销毁的闭包实例"><a href="#暂时占用内存，延时销毁的闭包实例" class="headerlink" title="暂时占用内存，延时销毁的闭包实例"></a>暂时占用内存，延时销毁的闭包实例</h2><p>将例3稍作修改，就变成了延时销毁的闭包实例。</p>
+<h3 id="例4："><a href="#例4：" class="headerlink" title="例4："></a>例4：</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">    var num = 100;</span><br><span class="line">    return function()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn()();	//这里到底发生了什么？其实是执行了一次fn之后，把返回的子函数有执行了一次，所以在子函数执行的时候，栈内存fn()是不能销毁的，但是子函数执行完毕后因为没有被占用，所以最终还是要被销毁的，所以最终fn()还是会被销毁的。</span><br></pre></td></tr></table></figure>
+
+<p>例4的图示：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fgxsu3f7vtj30uv0djq4j.jpg" alt=""></p>
+<p>正如途中椭圆形关键点处所说，<code>fn()()</code>的意思是在执行完<code>fn()</code>之后再把返回的值函数执行一遍。因此在子函数执行的时候，堆内存xxxfff111被占用了，相应的栈内存A也将保留。</p>
+<p>可堆内存xxxfff111中保存的子函数在执行完成之后还是会被销毁，接着堆内存xxxfff111就作为未被占用的堆内存而被销毁，最终栈内存A也会被销毁。</p>
+<p>所以，栈内存在执行完之后会被保留一段时间，这段时间等于其子函数执行的时间。</p>
+<p>参考资料：</p>
+<p>JavaScript高级程序设计(第三版)。</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+            
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2017/06/25/三类闭包实例理解闭包为什么会占用内存/" data-title="三类闭包实例理解闭包为什么会占用内存" data-url="http://yoursite.com/2017/06/25/%E4%B8%89%E7%B1%BB%E9%97%AD%E5%8C%85%E5%AE%9E%E4%BE%8B%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%8D%A0%E7%94%A8%E5%86%85%E5%AD%98/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+	<link rel="stylesheet" href="/css/comment-ds.css">
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello world
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/07/%E4%BD%BF%E7%94%A8autohotkey%E4%BF%AE%E6%94%B9%E6%96%B9%E5%90%91%E9%94%AE%E3%80%81%E5%9B%9E%E8%BD%A6%E5%92%8C%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用autohotkey修改方向键、回车和启动程序</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#占用内存，不会销毁的闭包实例"><span class="nav-number">1.</span> <span class="nav-text">占用内存，不会销毁的闭包实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例1："><span class="nav-number">1.1.</span> <span class="nav-text">例1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例2"><span class="nav-number">1.2.</span> <span class="nav-text">例2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不占用内存，立即销毁的实例"><span class="nav-number">2.</span> <span class="nav-text">不占用内存，立即销毁的实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例3："><span class="nav-number">2.1.</span> <span class="nav-text">例3：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂时占用内存，延时销毁的闭包实例"><span class="nav-number">3.</span> <span class="nav-text">暂时占用内存，延时销毁的闭包实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例4："><span class="nav-number">3.1.</span> <span class="nav-text">例4：</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

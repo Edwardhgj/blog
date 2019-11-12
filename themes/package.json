@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "hexo-deployer-git": "^2.0.0",
+    "hexo-generator-json-content": "^4.1.6"
+  }
+}

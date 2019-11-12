@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>前端周刊-2018年09月第3周 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="分享" />
+  
+  
+  
+  
+  <meta name="description" content="编写「可读」代码的实践链接:http:&#x2F;&#x2F;taobaofed.org&#x2F;blog&#x2F;2017&#x2F;01&#x2F;05&#x2F;writing-readable-code&#x2F; 摘要伟大的文学作品都是建立在废纸堆上的，不断删改作品的过程有助于写作者培养良好的「语感」。当然，代码毕竟不是艺术品，程序员没有精力也不一定有必要像作家一样反复打磨自己的代码&#x2F;作品。但是，如果我们能够在编写代码时稍稍多考虑一下实现的合理性，或者在添加新功">
+<meta name="keywords" content="分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端周刊-2018年09月第3周">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;09&#x2F;21&#x2F;%E5%89%8D%E7%AB%AF%E5%91%A8%E5%88%8A-2018%E5%B9%B409%E6%9C%88%E7%AC%AC3%E5%91%A8&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="编写「可读」代码的实践链接:http:&#x2F;&#x2F;taobaofed.org&#x2F;blog&#x2F;2017&#x2F;01&#x2F;05&#x2F;writing-readable-code&#x2F; 摘要伟大的文学作品都是建立在废纸堆上的，不断删改作品的过程有助于写作者培养良好的「语感」。当然，代码毕竟不是艺术品，程序员没有精力也不一定有必要像作家一样反复打磨自己的代码&#x2F;作品。但是，如果我们能够在编写代码时稍稍多考虑一下实现的合理性，或者在添加新功">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-07T14:30:57.247Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-前端周刊-2018年09月第3周" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      前端周刊-2018年09月第3周
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/09/21/%E5%89%8D%E7%AB%AF%E5%91%A8%E5%88%8A-2018%E5%B9%B409%E6%9C%88%E7%AC%AC3%E5%91%A8/" class="article-date">
+	  <time datetime="2018-09-21T08:24:00.000Z" itemprop="datePublished">September 21, 2018</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="编写「可读」代码的实践"><a href="#编写「可读」代码的实践" class="headerlink" title="编写「可读」代码的实践"></a><a href="http://taobaofed.org/blog/2017/01/05/writing-readable-code/" target="_blank" rel="noopener">编写「可读」代码的实践</a></h2><p><strong>链接:</strong><br><a href="http://taobaofed.org/blog/2017/01/05/writing-readable-code/" target="_blank" rel="noopener">http://taobaofed.org/blog/2017/01/05/writing-readable-code/</a></p>
+<p><strong>摘要</strong><br>伟大的文学作品都是建立在废纸堆上的，不断删改作品的过程有助于写作者培养良好的「语感」。当然，代码毕竟不是艺术品，程序员没有精力也不一定有必要像作家一样反复打磨自己的代码/作品。但是，如果我们能够在编写代码时稍稍多考虑一下实现的合理性，或者在添加新功能的时候稍稍回顾一下之前的实现，我们就能够培养出一些「代码语感」。这种「代码语感」会非常有助于我们写出高质量的可读的代码。</p>
+<h2 id="React-Redux-组件化方案"><a href="#React-Redux-组件化方案" class="headerlink" title="React + Redux 组件化方案"></a><a href="http://imweb.io/topic/57c531bc6227a4f55a8872c2" target="_blank" rel="noopener">React + Redux 组件化方案</a></h2><p><strong>链接:</strong><br><a href="http://imweb.io/topic/57c531bc6227a4f55a8872c2" target="_blank" rel="noopener">http://imweb.io/topic/57c531bc6227a4f55a8872c2</a></p>
+<p><strong>摘要</strong><br>组件化方案:理想中的组件化，第一步应该就是组件的标签化， 例如有一个 Header 组件，无需关注组件内部的实现，我们只需要使用一个 <Header/> 标签就能调用它，通过设置属性的方式，来控制它的显示的内容，和对应的事件。借助 jsx 语法，React 已经实现上述想法。<br>但是由于 React 的数据流向是单向的， 子组件的数据和方法只能由父级组件赋予，一旦组件嵌套层次变深，传递数据将会变得非常复杂。<br>redux 框架解决了这个问题，简单来说，它将 react 由父级传递数据，变为了由一个统一的数据源 store 单向地向各个组件传递数据。<br>所有数据都存放在 store 中，组件内部不维护任何数据。</p>
+<p>store 提供了 dispatch 方法来触发改变 store 中数据。 dispatch 传入的值被称作 action。 dispatch(action) 之后，会进入到 store 中称为 reducer 的处理函数，这些 reducer 会依据不同的 action 的类型，进行不同的处理，reducer 返回的值就会作为 store 中新的数据，一个 reducer 对应的是 store 中一个数据字段，每多一个reducer， store 中就多一个数据字段。数据发生改变后， store 就会通知对应的组件重新渲染。</p>
+<p>通过 redux 框架提供的 connect 高阶函数， 直接从 store 选取需要的数据和申明需要使用的方法传入组件中，这些申明的方法是组件事件具体的逻辑的实现，例如发送请求，上报逻辑等等，所以通常调用 dispatch(action) 的逻辑也会包含在里面。</p>
+<h2 id="ANT-DESIGN-PRO-开箱即用的中台前端-设计解决方案"><a href="#ANT-DESIGN-PRO-开箱即用的中台前端-设计解决方案" class="headerlink" title="ANT DESIGN PRO-开箱即用的中台前端/设计解决方案"></a><a href="http://imweb.io/topic/57c531bc6227a4f55a8872c2" target="_blank" rel="noopener">ANT DESIGN PRO-开箱即用的中台前端/设计解决方案</a></h2><p><strong>链接:</strong><br><a href="https://github.com/ant-design/ant-design-pro?utm_source=gold_browser_extension" target="_blank" rel="noopener">https://github.com/ant-design/ant-design-pro?utm_source=gold_browser_extension</a></p>
+<p><strong>摘要</strong><br>💎 优雅美观：基于 Ant Design 体系精心设计；<br>📐 常见设计模式：提炼自中后台应用的典型页面和场景；<br>🚀 最新技术栈：使用 React/dva/antd 等前端前沿技术开发；<br>📱 响应式：针对不同屏幕大小设计；<br>🎨 主题：可配置的主题满足多样化的品牌诉求；<br>🌐 国际化：内建业界通用的国际化方案；<br>⚙️ 最佳实践：良好的工程实践助您持续产出高质量代码；<br>🔢 Mock 数据：实用的本地数据调试方案；<br>✅ UI 测试：自动化测试保障前端产品质量；</p>
+<h2 id="实现一个完美符合Promise-A-规范的Promise"><a href="#实现一个完美符合Promise-A-规范的Promise" class="headerlink" title="实现一个完美符合Promise/A+规范的Promise"></a><a href="https://github.com/forthealllight/blog/issues/4" target="_blank" rel="noopener">实现一个完美符合Promise/A+规范的Promise</a></h2><p><strong>链接:</strong><br><a href="https://github.com/forthealllight/blog/issues/4" target="_blank" rel="noopener">https://github.com/forthealllight/blog/issues/4</a></p>
+<p><strong>摘要</strong><br>Promise允许我们通过链式调用的方式来解决“回调地狱”的问题，特别是在异步过程中，通过Promise可以保证代码的整洁性和可读性。本文主要解读Promise/A+规范，并在此规范的基础上，自己实现一个Promise.</p>
+<h2 id="Vue知识点整理"><a href="#Vue知识点整理" class="headerlink" title="Vue知识点整理"></a><a href="https://segmentfault.com/a/1190000016344599" target="_blank" rel="noopener">Vue知识点整理</a></h2><p><strong>链接</strong><br><a href="https://segmentfault.com/a/1190000016344599" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016344599</a></p>
+<ul>
+<li>对于MVVM的理解？</li>
+</ul>
+<p>Model代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑。<br>View 代表UI 组件，它负责将数据模型转化成UI 展现出来。<br>ViewModel 监听模型数据的改变和控制视图行为、处理用户交互，简单理解就是一个同步View 和 Model的对象，连接Model和View。<br>在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewModel 之间的交互是双向的， 因此View 数据的变化会同步到Model中，而Model 数据的变化也会立即反应到View 上。<br>ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，无需人为干涉，因此开发者只需关注业务逻辑，不需要手动操作DOM, 不需要关注数据状态的同步问题，复杂的数据状态维护完全由 MVVM 来统一管理。</p>
+<ul>
+<li>Vue的生命周期（8个阶段：创建前/后, 载入前/后,更新前/后,销毁前/销毁后)</li>
+</ul>
+<p>Vue 实例从创建到销毁的过程，就是生命周期。从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、销毁等一系列过程，称之为 Vue 的生命周期。<br>beforeCreate（创建前） 在数据观测和初始化事件还未开始<br>created（创建后） 完成数据观测，属性和方法的运算，初始化事件，$el属性还没有显示出来<br>beforeMount（载入前） 在挂载开始之前被调用，相关的render函数首次被调用。实例已完成以下的配置：编译模板，把data里面的数据和模板生成html。注意此时还没有挂载html到页面上。<br>mounted（载入后） 在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的html内容替换el属性指向的DOM对象。完成模板中的html渲染到html页面中。此过程中进行ajax交互。<br>beforeUpdate（更新前） 在数据更新之前调用，发生在虚拟DOM重新渲染和打补丁之前。可以在该钩子中进一步地更改状态，不会触发附加的重渲染过程。<br>updated（更新后） 在由于数据更改导致的虚拟DOM重新渲染和打补丁之后调用。调用时，组件DOM已经更新，所以可以执行依赖于DOM的操作。然而在大多数情况下，应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。<br>beforeDestroy（销毁前） 在实例销毁之前调用。实例仍然完全可用。<br>destroyed（销毁后） 在实例销毁之后调用。调用后，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用。</p>
+<ul>
+<li><p>Vue实现数据双向绑定的原理：Object.defineProperty（）</p>
+</li>
+<li><p>Vue组件间的参数传递</p>
+</li>
+</ul>
+<p>1.父组件与子组件传值<br>父组件传给子组件：子组件通过props方法接受数据;<br>子组件传给父组件：$emit方法传递参数<br>2.非父子组件间的数据传递，兄弟组件传值<br>eventBus，就是创建一个事件中心，相当于中转站，可以用它来传递事件和接收事件。项目比较小时，用这个比较合适</p>
+<ul>
+<li>vue路由的钩子函数</li>
+</ul>
+<p>首页可以控制导航跳转，beforeEach，afterEach等，一般用于页面title的修改。一些需要登录才能调整页面的重定向功能。</p>
+<p>beforeEach主要有3个参数to，from，next：</p>
+<p>to：route即将进入的目标路由对象，</p>
+<p>from：route当前导航正要离开的路由</p>
+<p>next：function一定要调用该方法resolve这个钩子。执行效果依赖next方法的调用参数。可以控制网页的跳转。</p>
+<ul>
+<li>vuex是什么？怎么使用？哪种功能场景使用它<br>只用来读取的状态集中放在store中； 改变状态的方式是提交mutations，这是个同步的事物； 异步逻辑应该封装在action中。<br>在main.js引入store，注入。新建了一个目录store，….. export 。<br>场景有：单页应用中，组件之间的状态、音乐播放、登录状态、加入购物车</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%91%A8%E5%88%8A/">前端周刊</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E4%BA%AB/" rel="tag">分享</a></li></ul>
+
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+            
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2018/09/21/前端周刊-2018年09月第3周/" data-title="前端周刊-2018年09月第3周" data-url="http://yoursite.com/2018/09/21/%E5%89%8D%E7%AB%AF%E5%91%A8%E5%88%8A-2018%E5%B9%B409%E6%9C%88%E7%AC%AC3%E5%91%A8/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+	<link rel="stylesheet" href="/css/comment-ds.css">
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/30/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%9C%80%E5%85%A8%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端开发最全面试题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/21/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83-used-by-frank/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">前端开发规范-used by frank</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编写「可读」代码的实践"><span class="nav-number">1.</span> <span class="nav-text">编写「可读」代码的实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Redux-组件化方案"><span class="nav-number">2.</span> <span class="nav-text">React + Redux 组件化方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANT-DESIGN-PRO-开箱即用的中台前端-设计解决方案"><span class="nav-number">3.</span> <span class="nav-text">ANT DESIGN PRO-开箱即用的中台前端/设计解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个完美符合Promise-A-规范的Promise"><span class="nav-number">4.</span> <span class="nav-text">实现一个完美符合Promise/A+规范的Promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue知识点整理"><span class="nav-number">5.</span> <span class="nav-text">Vue知识点整理</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
