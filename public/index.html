@@ -862,6 +862,110 @@ var themeMenus = {};
     
 
   
+    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/06/28/hello-world/">Hello world</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/06/28/hello-world/" class="article-date">
+	  <time datetime="2017-06-28T13:01:40.000Z" itemprop="datePublished">June 28, 2017</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/06/28/%E7%BB%83%E4%B9%A0%E7%94%A8%E5%8E%9F%E7%94%9FJavaScript%E7%BC%96%E5%86%99%E4%B8%8EJavaScript%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95slice%E5%8A%9F%E8%83%BD%E4%B8%80%E6%A0%B7%E7%9A%84%E5%87%BD%E6%95%B0/">练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/06/28/%E7%BB%83%E4%B9%A0%E7%94%A8%E5%8E%9F%E7%94%9FJavaScript%E7%BC%96%E5%86%99%E4%B8%8EJavaScript%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95slice%E5%8A%9F%E8%83%BD%E4%B8%80%E6%A0%B7%E7%9A%84%E5%87%BD%E6%95%B0/" class="article-date">
+	  <time datetime="2017-06-28T13:01:40.000Z" itemprop="datePublished">June 28, 2017</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚刚开始的时候感觉不太难，越写越发现之前忽略的可能性很多。</p>
+<p>当只有一个变量的时候，把代码写出来不是特别困难。可当有两个变量的时候，情况就复杂了很多。我在刚开始写的时候就在想如何把冗余的代码裁减掉，结果就是大脑宕机。最后老老实实的在纸上，用最笨的方法把所有的可能性都列出来，再去想如何把类似的代码拿出来就变得很容易了。</p>
+<p>所以，如果觉得大脑硬件不够用了，那就用最笨的办法先去把事情做了，然后再去优化。</p>
+<p>最后写出来的东西</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.mySlice = function () &#123;</span><br><span class="line">    var n = arguments[0];</span><br><span class="line">    var m = arguments[1];</span><br><span class="line">    if (n &gt;= 0) &#123;</span><br><span class="line">        var nN = Math.floor(n);</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        var nN = Math.ceil(n);</span><br><span class="line">    &#125;</span><br><span class="line">    if (m &gt;= 0) &#123;</span><br><span class="line">        var nM = Math.floor(m);</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        var nM = Math.ceil(m);</span><br><span class="line">    &#125;</span><br><span class="line">    var aArray1 = [];</span><br><span class="line">    if (arguments.length == 1) &#123;</span><br><span class="line">        if (nN &lt;= -this.length) &#123;</span><br><span class="line">            for (var i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">                aArray1[i] = this[i];</span><br><span class="line">            &#125;</span><br><span class="line">            return aArray1;</span><br><span class="line">        &#125;</span><br><span class="line">        else if (nN &gt; -this.length &amp;&amp; nN &lt; 0) &#123;</span><br><span class="line">            for (var i = 0; i &lt; -nN; i++) &#123;</span><br><span class="line">                aArray1[i] = this[nN + this.length + i];</span><br><span class="line">            &#125;</span><br><span class="line">            return aArray1;</span><br><span class="line">        &#125;else if (nN == 0) &#123;</span><br><span class="line">            for (var i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">                aArray1[i] = this[i];</span><br><span class="line">            &#125;</span><br><span class="line">            return aArray1;</span><br><span class="line">        &#125;else if (nN &gt; 0 &amp;&amp; nN &lt;= this.length) &#123;</span><br><span class="line">            for (var i = 0; i &lt; this.length - nN; i++) &#123;</span><br><span class="line">                aArray1[i] = this[nN + i]</span><br><span class="line">            &#125;</span><br><span class="line">            return aArray1;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            return [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        if (nN + 1 &gt; this.length) &#123;</span><br><span class="line">            return [];</span><br><span class="line">        &#125;else if (nM &lt; -this.length) &#123;</span><br><span class="line">            return [];</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            if (nN &gt;= 0) &#123;</span><br><span class="line">                if (nM &gt;= 0 &amp;&amp; nM &lt;= this.length-1) &#123;</span><br><span class="line">                    if (nN &gt;= nM) &#123;</span><br><span class="line">                        return [];</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        for (var i = 0; i &lt; (nM - nN); i++) &#123;</span><br><span class="line">                            aArray1[i] = this[nN + i];</span><br><span class="line">                        &#125;</span><br><span class="line">                        return aArray1;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else if (nM &gt; this.length-1) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; this.length - nN; i++) &#123;</span><br><span class="line">                        aArray1[i] = this[nN + i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;</span><br><span class="line">                else if (nM &lt;= -1) &#123;</span><br><span class="line">                    if ((-nM + nN) &gt;= this.length) &#123;</span><br><span class="line">                        return [];</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        for (var i = 0; i &lt; (this.length + nM - nN); i++) &#123;</span><br><span class="line">                            aArray1[i] = this[nN + i];</span><br><span class="line">                        &#125;</span><br><span class="line">                        return aArray1;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    return [];</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            else if (nN &lt;= -1 &amp;&amp; nN &gt; -this.length) &#123;</span><br><span class="line">                if (nM &gt; 0 &amp;&amp; nM &lt;= this.length-1) &#123;</span><br><span class="line">                    if (- nN + nM &lt;= this.length) &#123;</span><br><span class="line">                        return [];</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        for (var i = 0; i &lt; nM - nN - this.length; i++) &#123;</span><br><span class="line">                            aArray1[i] = this[nN + this.length + i];</span><br><span class="line">                        &#125;</span><br><span class="line">                        return aArray1;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else if (nM &gt; this.length-1) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; -nN; i++) &#123;</span><br><span class="line">                        aArray1[i] = this[this.length + nN + i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;</span><br><span class="line">                else if (nM &lt;= -1) &#123;</span><br><span class="line">                    if (nN &lt; nM) &#123;</span><br><span class="line">                        for (var i = 0; i &lt; (nM - nN); i++) &#123;</span><br><span class="line">                            aArray1[i] = this[this.length + nN + i];</span><br><span class="line">                        &#125;</span><br><span class="line">                        return aArray1;</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        return [];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    return [];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                if (nM &gt; 0 &amp;&amp; nM &lt;= this.length -1) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; nM; i++) &#123;</span><br><span class="line">                        aArray1[i] = this[i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;else if (nM &lt;= -1 &amp;&amp; nM &gt; -this.length) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; (this.length + nM); i++) &#123;</span><br><span class="line">                        aArray1[i] = this[i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;else if (nM &gt; this.length-1) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">                        aArray1[i] = this[i]</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    return [];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//测试部分。</span><br><span class="line">var aTest = [0, 1, 2, 3, 4];</span><br><span class="line">var b = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    var n = Math.random() * 100 - 50;</span><br><span class="line">    b[i] = n;</span><br><span class="line">&#125;</span><br><span class="line">for (var i = 0; i &lt; b.length; i++) &#123;</span><br><span class="line">    for (var j = 0; j &lt;b.length; j++) &#123;</span><br><span class="line">        console.log(b[i], b[j]);</span><br><span class="line">        console.log(aTest.slice(b[i], b[j]));</span><br><span class="line">        console.log(aTest.mySlice(b[i], b[j]));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//测试一个参数的情况。</span><br><span class="line">// for (var i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">//         console.log(b[i]);</span><br><span class="line">//         console.log(aTest.slice(b[i]));</span><br><span class="line">//         console.log(aTest.mySlice(b[i]));</span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
     <article id="post-celery"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -945,110 +1049,6 @@ port = 3306
 socket =
                         </p></li></ul></div>
 </html>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/06/28/%E7%BB%83%E4%B9%A0%E7%94%A8%E5%8E%9F%E7%94%9FJavaScript%E7%BC%96%E5%86%99%E4%B8%8EJavaScript%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95slice%E5%8A%9F%E8%83%BD%E4%B8%80%E6%A0%B7%E7%9A%84%E5%87%BD%E6%95%B0/">练习用原生JavaScript编写与JavaScript数组方法slice功能一样的函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2017/06/28/%E7%BB%83%E4%B9%A0%E7%94%A8%E5%8E%9F%E7%94%9FJavaScript%E7%BC%96%E5%86%99%E4%B8%8EJavaScript%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95slice%E5%8A%9F%E8%83%BD%E4%B8%80%E6%A0%B7%E7%9A%84%E5%87%BD%E6%95%B0/" class="article-date">
-	  <time datetime="2017-06-28T13:01:40.000Z" itemprop="datePublished">June 28, 2017</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>刚刚开始的时候感觉不太难，越写越发现之前忽略的可能性很多。</p>
-<p>当只有一个变量的时候，把代码写出来不是特别困难。可当有两个变量的时候，情况就复杂了很多。我在刚开始写的时候就在想如何把冗余的代码裁减掉，结果就是大脑宕机。最后老老实实的在纸上，用最笨的方法把所有的可能性都列出来，再去想如何把类似的代码拿出来就变得很容易了。</p>
-<p>所以，如果觉得大脑硬件不够用了，那就用最笨的办法先去把事情做了，然后再去优化。</p>
-<p>最后写出来的东西</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.mySlice = function () &#123;</span><br><span class="line">    var n = arguments[0];</span><br><span class="line">    var m = arguments[1];</span><br><span class="line">    if (n &gt;= 0) &#123;</span><br><span class="line">        var nN = Math.floor(n);</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        var nN = Math.ceil(n);</span><br><span class="line">    &#125;</span><br><span class="line">    if (m &gt;= 0) &#123;</span><br><span class="line">        var nM = Math.floor(m);</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        var nM = Math.ceil(m);</span><br><span class="line">    &#125;</span><br><span class="line">    var aArray1 = [];</span><br><span class="line">    if (arguments.length == 1) &#123;</span><br><span class="line">        if (nN &lt;= -this.length) &#123;</span><br><span class="line">            for (var i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">                aArray1[i] = this[i];</span><br><span class="line">            &#125;</span><br><span class="line">            return aArray1;</span><br><span class="line">        &#125;</span><br><span class="line">        else if (nN &gt; -this.length &amp;&amp; nN &lt; 0) &#123;</span><br><span class="line">            for (var i = 0; i &lt; -nN; i++) &#123;</span><br><span class="line">                aArray1[i] = this[nN + this.length + i];</span><br><span class="line">            &#125;</span><br><span class="line">            return aArray1;</span><br><span class="line">        &#125;else if (nN == 0) &#123;</span><br><span class="line">            for (var i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">                aArray1[i] = this[i];</span><br><span class="line">            &#125;</span><br><span class="line">            return aArray1;</span><br><span class="line">        &#125;else if (nN &gt; 0 &amp;&amp; nN &lt;= this.length) &#123;</span><br><span class="line">            for (var i = 0; i &lt; this.length - nN; i++) &#123;</span><br><span class="line">                aArray1[i] = this[nN + i]</span><br><span class="line">            &#125;</span><br><span class="line">            return aArray1;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            return [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        if (nN + 1 &gt; this.length) &#123;</span><br><span class="line">            return [];</span><br><span class="line">        &#125;else if (nM &lt; -this.length) &#123;</span><br><span class="line">            return [];</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            if (nN &gt;= 0) &#123;</span><br><span class="line">                if (nM &gt;= 0 &amp;&amp; nM &lt;= this.length-1) &#123;</span><br><span class="line">                    if (nN &gt;= nM) &#123;</span><br><span class="line">                        return [];</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        for (var i = 0; i &lt; (nM - nN); i++) &#123;</span><br><span class="line">                            aArray1[i] = this[nN + i];</span><br><span class="line">                        &#125;</span><br><span class="line">                        return aArray1;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else if (nM &gt; this.length-1) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; this.length - nN; i++) &#123;</span><br><span class="line">                        aArray1[i] = this[nN + i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;</span><br><span class="line">                else if (nM &lt;= -1) &#123;</span><br><span class="line">                    if ((-nM + nN) &gt;= this.length) &#123;</span><br><span class="line">                        return [];</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        for (var i = 0; i &lt; (this.length + nM - nN); i++) &#123;</span><br><span class="line">                            aArray1[i] = this[nN + i];</span><br><span class="line">                        &#125;</span><br><span class="line">                        return aArray1;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    return [];</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            else if (nN &lt;= -1 &amp;&amp; nN &gt; -this.length) &#123;</span><br><span class="line">                if (nM &gt; 0 &amp;&amp; nM &lt;= this.length-1) &#123;</span><br><span class="line">                    if (- nN + nM &lt;= this.length) &#123;</span><br><span class="line">                        return [];</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        for (var i = 0; i &lt; nM - nN - this.length; i++) &#123;</span><br><span class="line">                            aArray1[i] = this[nN + this.length + i];</span><br><span class="line">                        &#125;</span><br><span class="line">                        return aArray1;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else if (nM &gt; this.length-1) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; -nN; i++) &#123;</span><br><span class="line">                        aArray1[i] = this[this.length + nN + i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;</span><br><span class="line">                else if (nM &lt;= -1) &#123;</span><br><span class="line">                    if (nN &lt; nM) &#123;</span><br><span class="line">                        for (var i = 0; i &lt; (nM - nN); i++) &#123;</span><br><span class="line">                            aArray1[i] = this[this.length + nN + i];</span><br><span class="line">                        &#125;</span><br><span class="line">                        return aArray1;</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        return [];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    return [];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                if (nM &gt; 0 &amp;&amp; nM &lt;= this.length -1) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; nM; i++) &#123;</span><br><span class="line">                        aArray1[i] = this[i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;else if (nM &lt;= -1 &amp;&amp; nM &gt; -this.length) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; (this.length + nM); i++) &#123;</span><br><span class="line">                        aArray1[i] = this[i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;else if (nM &gt; this.length-1) &#123;</span><br><span class="line">                    for (var i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">                        aArray1[i] = this[i]</span><br><span class="line">                    &#125;</span><br><span class="line">                    return aArray1;</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    return [];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//测试部分。</span><br><span class="line">var aTest = [0, 1, 2, 3, 4];</span><br><span class="line">var b = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    var n = Math.random() * 100 - 50;</span><br><span class="line">    b[i] = n;</span><br><span class="line">&#125;</span><br><span class="line">for (var i = 0; i &lt; b.length; i++) &#123;</span><br><span class="line">    for (var j = 0; j &lt;b.length; j++) &#123;</span><br><span class="line">        console.log(b[i], b[j]);</span><br><span class="line">        console.log(aTest.slice(b[i], b[j]));</span><br><span class="line">        console.log(aTest.mySlice(b[i], b[j]));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//测试一个参数的情况。</span><br><span class="line">// for (var i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">//         console.log(b[i]);</span><br><span class="line">//         console.log(aTest.slice(b[i]));</span><br><span class="line">//         console.log(aTest.mySlice(b[i]));</span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/06/28/hello-world/">Hello world</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2017/06/28/hello-world/" class="article-date">
-	  <time datetime="2017-06-28T13:01:40.000Z" itemprop="datePublished">June 28, 2017</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
       
     </div>
     <footer class="entry-meta entry-footer">
