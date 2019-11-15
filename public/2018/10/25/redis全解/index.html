@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>redis | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Redis Redis 简介Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。 Redis 与其他 key - value 缓存产品有以下三个特点：  Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。 Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;10&#x2F;25&#x2F;redis%E5%85%A8%E8%A7%A3&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Redis Redis 简介Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。 Redis 与其他 key - value 缓存产品有以下三个特点：  Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。 Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925141429889-1694430603.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925141527592-2105439510.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925142100480-1152515615.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925142118041-1727225479.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925142143478-1454265814.png">
+<meta property="og:updated_time" content="2019-11-15T13:39:20.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925141429889-1694430603.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-redis全解" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Redis
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/10/25/redis%E5%85%A8%E8%A7%A3/" class="article-date">
+	  <time datetime="2018-10-25T12:03:40.000Z" itemprop="datePublished">October 25, 2018</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><ul>
+<li><h1 id="Redis-简介"><a href="#Redis-简介" class="headerlink" title="Redis 简介"></a>Redis 简介</h1><p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。</p>
+<p>Redis 与其他 key - value 缓存产品有以下三个特点：</p>
+<ul>
+<li>Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。</li>
+<li>Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</li>
+<li>Redis支持数据的备份，即master-slave模式的数据备份。</li>
+</ul>
+<hr>
+<h2 id="Redis-优势"><a href="#Redis-优势" class="headerlink" title="Redis 优势"></a>Redis 优势</h2><ul>
+<li>性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。</li>
+<li>丰富的数据类型 – Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。</li>
+<li>原子 – Redis的所有操作都是原子性的，意思就是要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过MULTI和EXEC指令包起来。</li>
+<li>丰富的特性 – Redis还支持 publish/subscribe, 通知, key 过期等等特性。</li>
+</ul>
+</li>
+<li><h1 id="Redis-数据类型"><a href="#Redis-数据类型" class="headerlink" title="Redis 数据类型"></a>Redis 数据类型</h1><ul>
+<li><h2 id="String字符串："><a href="#String字符串：" class="headerlink" title="String字符串："></a>String字符串：</h2><p>格式: set key value</p>
+<p>string类型是二进制安全的。意思是redis的string可以包含任何数据。比如jpg图片或者序列化的对象 。</p>
+<p>string类型是Redis最基本的数据类型，一个键最大能存储512MB。</p>
+<h5 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h5><ul>
+<li>缓存：将数据以字符串方式存储</li>
+<li>计数器功能：比如视频播放次数，点赞次数。</li>
+<li>共享session：数据共享的功能，redis作为单独的应用软件用来存储一些共享数据供多个实例访问。</li>
+</ul>
+</li>
+<li><h3 id="Hash（哈希）"><a href="#Hash（哈希）" class="headerlink" title="Hash（哈希）"></a>Hash（哈希）</h3><p>格式: hmset name  key1 value1 key2 value2</p>
+<p>Redis hash 是一个键值(key=&gt;value)对集合。</p>
+<p>Redis hash是一个string类型的field和value的映射表，hash特别适合用于存储对象。</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">hset key field value</span><br><span class="line">hsetnx key field value  <span class="comment">//与setnx命令一样，不存在则设置值，用于添加，作用在field上面</span></span><br><span class="line"></span><br><span class="line">hget key field <span class="comment">//获取值</span></span><br><span class="line">hdel key field <span class="comment">// 删除值</span></span><br><span class="line">hlen key <span class="comment">//子酸field的个数</span></span><br><span class="line">hmset key field value [filed value] <span class="comment">//批量设置field-value</span></span><br><span class="line">hexists key field  <span class="comment">//判断filed是否存在</span></span><br><span class="line">hkeys key <span class="comment">//获取所有的field</span></span><br><span class="line">hvals key <span class="comment">//获取所有的value</span></span><br><span class="line">hgetall key <span class="comment">//获取所有的field-value ，如果元素数较多会存在阻塞redis的可能</span></span><br><span class="line">hincreby key filed</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>##### 使用场景
+
++ 和字符串很像，基本上redis对字符串操作的命令,Redis的Hash一般也存在，不过在命令前多个一个h。
++ 一些关系型数据库中不是特别复杂的表，也无需复杂的关系查询，可以使用Redis的Hash来存储，也可以用Hash做表数据缓存。</code></pre><ul>
+<li><h3 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a>List（列表）</h3><p>Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">rpush key value [value...] <span class="comment">//从右插入元素</span></span><br><span class="line">lpush key value [value...] <span class="comment">//从左边插入元素</span></span><br><span class="line"></span><br><span class="line">lrange key start <span class="keyword">end</span> <span class="comment">//获取指定范围的元素列表</span></span><br><span class="line">lindex key <span class="keyword">index</span>  <span class="comment">//获取列表指定索引下标的元素</span></span><br><span class="line"></span><br><span class="line">llen key  <span class="comment">//获取列表的长度</span></span><br><span class="line"></span><br><span class="line">lpop key <span class="comment">// 从列表左侧弹出元素</span></span><br><span class="line">rpop key <span class="comment">// 从列表右侧弹出元素</span></span><br><span class="line">lrem key count value <span class="comment">//从列表中找到等于value的元素，并进行删除，根据count的不同有不同的情况</span></span><br><span class="line">lset key <span class="keyword">index</span> newValue <span class="comment">//修改指定索引下标的元素</span></span><br><span class="line">blpop key timeout  <span class="comment">//阻塞式左弹出key</span></span><br><span class="line">brpop key timeout  <span class="comment">//阻塞式右弹出key</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<pre><code>##### 使用场景：
+
+- 消息队列：我们公司就是使用redis做消息队列，lpush + brpop或rpop命令，实现先进先出，如果消费失败客户端把key再放回去，消费成功真的remove掉</code></pre><ul>
+<li><h3 id="Set（集合）"><a href="#Set（集合）" class="headerlink" title="Set（集合）"></a>Set（集合）</h3><p>集合是用来保存多个字符串的元素，内部不允许有重复远古三，集合内的元素是无序的，Redis支持集合的增删改查，同时支持多个集合取交集，并集，差集</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sadd key value [value...] <span class="comment">//添加元素</span></span><br><span class="line">srem key value [value...] <span class="comment">//删除元素</span></span><br><span class="line">scard key   <span class="comment">//计算元素的个数</span></span><br><span class="line">sismember key value <span class="comment">//判断元素是否在集合中</span></span><br><span class="line">srandmember key [count]  <span class="comment">//随机从集合中返回指定个数的元素，不写默认为1</span></span><br><span class="line">spop key <span class="comment">//从集合随机取出元素</span></span><br><span class="line">smembers key <span class="comment">//获取集合内的所有元素</span></span><br><span class="line"></span><br><span class="line">sinter key1 key2 <span class="comment">//求集合的交集</span></span><br><span class="line">sunion key1 key2 <span class="comment">//求集合的并集</span></span><br><span class="line">sdiff key1 key2  <span class="comment">//求集合的差集</span></span><br></pre></td></tr></table></figure>
+
+<p>Redis的Set是string类型的无序集合。</p>
+<p>集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。</p>
+<h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h5><ul>
+<li>标签</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h3 id="zset-sorted-set：有序集合"><a href="#zset-sorted-set：有序集合" class="headerlink" title="zset(sorted set：有序集合)"></a>zset(sorted set：有序集合)</h3><p>它保留了元素不能重复的特性，并且元素是有序的。</p>
+<p>格式: zadd  name score value</p>
+<p>Redis zset 和 set 一样也是string类型元素的集合,且不允许重复的成员。</p>
+<p>不同的是每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</p>
+<p>zset的成员是唯一的,但分数(score)却可以重复。</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">zadd key score member  <span class="comment">//score是可以重复的，添加key的时候指定分数</span></span><br><span class="line">zcard key <span class="comment">//计算成员个数</span></span><br><span class="line">zscore key member <span class="comment">//计算某个成员的分数</span></span><br><span class="line">zrank key member <span class="comment">//计算成员排名，从低到高</span></span><br><span class="line">zrevrank key member <span class="comment">//计算成员排名，从高到低</span></span><br><span class="line">zrem key member [member...]  <span class="comment">//删除成员</span></span><br><span class="line">zincrby key increnment member <span class="comment">//增加成员的分数</span></span><br><span class="line">zrange key start <span class="keyword">end</span> [withscores]  <span class="comment">//从低到高返回指定排名的分数</span></span><br><span class="line">zrevrange key start <span class="keyword">end</span> [withscores]  <span class="comment">//从高到低返回</span></span><br><span class="line"></span><br><span class="line">zrangebyscore key min max [withscores] [limit offset count] <span class="comment">//按照分数从低到高返回</span></span><br><span class="line">zrevrange score  key min max [withscores] [limit offset count] <span class="comment">//按照分数从高到低返回成员</span></span><br><span class="line"></span><br><span class="line">withscore 代表返回的时候带上成员的分数</span><br><span class="line"></span><br><span class="line">...还有求交集，并集等操作</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<pre><code>##### 使用场景
+
++ 排行榜，目前公司的飙车榜用的是redis的有序集合，返回前面排名的元素之后再使用redis的mget命令获取获取到的key信息。</code></pre><ul>
+<li><h1 id="redis数据库的常见问题？"><a href="#redis数据库的常见问题？" class="headerlink" title="redis数据库的常见问题？"></a>redis数据库的常见问题？</h1><ol>
+<li><p><strong>什么是Redis持久化？Redis有哪几种持久化方式？优缺点是什么？</strong> </p>
+<p>持久化就是把内存的数据写到磁盘中去，防止服务宕机了内存数据丢失。</p>
+<p>Redis 提供了两种持久化方式:RDB（默认） 和AOF </p>
+<p><strong>RDB：</strong> </p>
+<p>rdb是Redis DataBase缩写 (快照)</p>
+<p>功能核心函数rdbSave(生成RDB文件)和rdbLoad（从文件加载内存）两个函数 </p>
+<p><img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925141429889-1694430603.png" alt="img"> </p>
+</li>
+<li><p><strong>AOF:</strong> </p>
+<p>Aof是Append-only file缩写 </p>
+<p><img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925141527592-2105439510.png" alt="img"> </p>
+<p>每当执行服务器(定时)任务或者函数时flushAppendOnlyFile 函数都会被调用， 这个函数执行以下两个工作</p>
+<p>aof写入保存：</p>
+<p>WRITE：根据条件，将 aof_buf 中的缓存写入到 AOF 文件</p>
+<p>SAVE：根据条件，调用 fsync 或 fdatasync 函数，将 AOF 文件保存到磁盘中。</p>
+<p><strong>存储结构:</strong></p>
+<p>  内容是redis通讯协议(RESP )格式的命令文本存储。</p>
+<p><strong>比较</strong>：</p>
+<p>1、aof文件比rdb更新频率高，优先使用aof还原数据。</p>
+<p>2、aof比rdb更安全也更大</p>
+<p>3、rdb性能比aof好</p>
+<p>4、如果两个都配了优先加载AOF</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="07"><a href="#07" class="headerlink" title="07."></a>07.</h3><p><strong>单机版</strong> </p>
+<p>  <img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925142100480-1152515615.png" alt="img"> </p>
+<p>  特点：简单</p>
+<p>  问题：</p>
+<p>  1、内存容量有限 2、处理能力有限 3、无法高可用。</p>
+<p>  <strong>主从复制</strong> </p>
+<p>  <strong><img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925142118041-1727225479.png" alt="img"></strong> </p>
+<p>  Redis 的复制（replication）功能允许用户根据一个 Redis 服务器来创建任意多个该服务器的复制品，其中被复制的服务器为主服务器（master），而通过复制创建出来的服务器复制品则为从服务器（slave）。 只要主从服务器之间的网络连接正常，主从服务器两者会具有相同的数据，主服务器就会一直将发生在自己身上的数据更新同步 给从服务器，从而一直保证主从服务器的数据相同。</p>
+<p>  特点：</p>
+<p>  1、master/slave 角色</p>
+<p>  2、master/slave 数据相同</p>
+<p>  3、降低 master 读压力在转交从库</p>
+<p>  问题：</p>
+<p>  无法保证高可用</p>
+<p>  没有解决 master 写的压力</p>
+<p>  <strong>哨兵</strong> </p>
+<p>  <strong><img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925142143478-1454265814.png" alt="img"></strong> </p>
+<p>  Redis sentinel 是一个分布式系统中监控 redis 主从服务器，并在主服务器下线时自动进行故障转移。其中三个特性：</p>
+<p>  监控（Monitoring）：    Sentinel  会不断地检查你的主服务器和从服务器是否运作正常。</p>
+<p>  提醒（Notification）： 当被监控的某个 Redis 服务器出现问题时， Sentinel 可以通过 API 向管理员或者其他应用程序发送通知。</p>
+<p>  自动故障迁移（Automatic failover）： 当一个主服务器不能正常工作时， Sentinel 会开始一次自动故障迁移操作。</p>
+<p>  特点：</p>
+<p>  1、保证高可用</p>
+<p>  2、监控各个节点</p>
+<p>  3、自动故障迁移</p>
+<p>  缺点：主从模式，切换需要时间丢数据</p>
+<p>  没有解决 master 写的压力</p>
+<p>  redis哨兵模式和高可用集群解析</p>
+<p>  <a href="https://www.cnblogs.com/bingshu/p/9776610.html" target="_blank" rel="noopener">https://www.cnblogs.com/bingshu/p/9776610.html</a> </p>
+<h3 id="08"><a href="#08" class="headerlink" title="08."></a>08.</h3><p>  <strong>使用过Redis分布式锁么，它是怎么实现的？</strong> </p>
+<pre><code>先拿setnx来争抢锁，抢到之后，再用expire给锁加一个过期时间防止锁忘记了释放。 </code></pre><p>  <strong>如果在setnx之后执行expire之前进程意外crash或者要重启维护了，那会怎么样？</strong> </p>
+<p>​    set指令有非常复杂的参数，这个应该是可以同时把setnx和expire合成一条指令来用的！ </p>
+<h3 id="09"><a href="#09" class="headerlink" title="09."></a>09.</h3><p> <strong>使用过Redis做异步队列么，你是怎么用的？有什么缺点？</strong></p>
+<p>​    一般使用list结构作为队列，rpush生产消息，brpop消费消息。当lpop没有消息的时候，要适当sleep一会再重试。</p>
+<p>​    缺点：</p>
+<p>​    在消费者下线的情况下，生产的消息会丢失，得使用专业的消息队列如rabbitmq等。</p>
+<p><strong>能不能生产一次消费多次呢？</strong></p>
+<p>使用pub/sub主题订阅者模式，可以实现1:N的消息队列。</p>
+<p><strong>10</strong></p>
+<p><strong>什么是缓存穿透？如何避免？什么是缓存雪崩？何如避免？</strong></p>
+<ul>
+<li>缓存穿透</li>
+</ul>
+<p>​    一般的缓存系统，都是按照key去缓存查询，如果不存在对应的value，就应该去后端系统查找（比如DB）。一些恶意的请求会故意查询不存在的key,请求量很大，就会对后端系统造成很大的压力。这就叫做缓存穿透。</p>
+<p>​    如何避免？</p>
+<p>​    1：对查询结果为空的情况也进行缓存，缓存时间设置短一点，或者该key对应的数据insert了之后清理缓存。</p>
+<p>​    2：对一定不存在的key进行过滤。可以把所有的可能存在的key放到一个大的Bitmap中，查询时通过该bitmap过滤。</p>
+<ul>
+<li>缓存雪崩</li>
+</ul>
+<p>​    当缓存服务器重启或者大量缓存集中在某一个时间段失效，这样在失效的时候，会给后端系统带来很大压力。导致系统崩溃。</p>
+<p>如何避免？</p>
+<p>​    1：在缓存失效后，通过加锁或者队列来控制读数据库写缓存的线程数量。比如对某个key只允许一个线程查询数据和写缓存，其他线程等待。</p>
+<p>​    2：做二级缓存，A1为原始缓存，A2为拷贝缓存，A1失效时，可以访问A2，A1缓存失效时间设置为短期，A2设置为长期</p>
+<p>​    3：不同的key，设置不同的过期时间，让缓存失效的时间点尽量均匀。</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+            
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2018/10/25/redis全解/" data-title="Redis" data-url="http://yoursite.com/2018/10/25/redis%E5%85%A8%E8%A7%A3/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+	<link rel="stylesheet" href="/css/comment-ds.css">
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/06/28/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85mongodb/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          阿里云服务器如何安装mongodb？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/30/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%9C%80%E5%85%A8%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">前端开发最全面试题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">1.</span> <span class="nav-text">Redis</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-简介"><span class="nav-number"></span> <span class="nav-text">Redis 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-优势"><span class="nav-number">1.</span> <span class="nav-text">Redis 优势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-数据类型"><span class="nav-number"></span> <span class="nav-text">Redis 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String字符串："><span class="nav-number">1.</span> <span class="nav-text">String字符串：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用场景"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">使用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash（哈希）"><span class="nav-number">1.1.</span> <span class="nav-text">Hash（哈希）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List（列表）"><span class="nav-number">1.2.</span> <span class="nav-text">List（列表）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set（集合）"><span class="nav-number">1.3.</span> <span class="nav-text">Set（集合）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zset-sorted-set：有序集合"><span class="nav-number">1.4.</span> <span class="nav-text">zset(sorted set：有序集合)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#redis数据库的常见问题？"><span class="nav-number"></span> <span class="nav-text">redis数据库的常见问题？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#07"><span class="nav-number">0.1.</span> <span class="nav-text">07.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#08"><span class="nav-number">0.2.</span> <span class="nav-text">08.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#09"><span class="nav-number">0.3.</span> <span class="nav-text">09.</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
