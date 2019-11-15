@@ -26,14 +26,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Redis Redis 简介Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。 Redis 与其他 key - value 缓存产品有以下三个特点：  Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。 Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925141429889-1694430603.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925141527592-2105439510.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925142100480-1152515615.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925142118041-1727225479.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925142143478-1454265814.png">
-<meta property="og:updated_time" content="2019-11-15T13:39:20.599Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;10&#x2F;25&#x2F;redis%E5%85%A8%E8%A7%A3&#x2F;1481291-20180925141429889-1694430603.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;10&#x2F;25&#x2F;redis%E5%85%A8%E8%A7%A3&#x2F;1481291-20180925141527592-2105439510.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;10&#x2F;25&#x2F;redis%E5%85%A8%E8%A7%A3&#x2F;1481291-20180925142100480-1152515615.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;10&#x2F;25&#x2F;redis%E5%85%A8%E8%A7%A3&#x2F;1481291-20180925142118041-1727225479.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;10&#x2F;25&#x2F;redis%E5%85%A8%E8%A7%A3&#x2F;1481291-20180925142143478-1454265814.png">
+<meta property="og:updated_time" content="2019-11-15T14:04:08.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1481291&#x2F;201809&#x2F;1481291-20180925141429889-1694430603.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;10&#x2F;25&#x2F;redis%E5%85%A8%E8%A7%A3&#x2F;1481291-20180925141429889-1694430603.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -280,11 +280,15 @@ var themeMenus = {};
 <p><strong>RDB：</strong> </p>
 <p>rdb是Redis DataBase缩写 (快照)</p>
 <p>功能核心函数rdbSave(生成RDB文件)和rdbLoad（从文件加载内存）两个函数 </p>
-<p><img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925141429889-1694430603.png" alt="img"> </p>
+<p><img src="1481291-20180925141429889-1694430603.png" alt="img"> </p>
 </li>
+</ol>
+</li>
+</ul>
+<ol start="2">
 <li><p><strong>AOF:</strong> </p>
 <p>Aof是Append-only file缩写 </p>
-<p><img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925141527592-2105439510.png" alt="img"> </p>
+<p><img src="1481291-20180925141527592-2105439510.png" alt="img"> </p>
 <p>每当执行服务器(定时)任务或者函数时flushAppendOnlyFile 函数都会被调用， 这个函数执行以下两个工作</p>
 <p>aof写入保存：</p>
 <p>WRITE：根据条件，将 aof_buf 中的缓存写入到 AOF 文件</p>
@@ -298,15 +302,13 @@ var themeMenus = {};
 <p>4、如果两个都配了优先加载AOF</p>
 </li>
 </ol>
-</li>
-</ul>
 <h3 id="07"><a href="#07" class="headerlink" title="07."></a>07.</h3><p><strong>单机版</strong> </p>
-<p>  <img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925142100480-1152515615.png" alt="img"> </p>
+<p>  <img src="1481291-20180925142100480-1152515615.png" alt="img"> </p>
 <p>  特点：简单</p>
 <p>  问题：</p>
 <p>  1、内存容量有限 2、处理能力有限 3、无法高可用。</p>
 <p>  <strong>主从复制</strong> </p>
-<p>  <strong><img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925142118041-1727225479.png" alt="img"></strong> </p>
+<p>  <img src="1481291-20180925142118041-1727225479.png" alt="img"></p>
 <p>  Redis 的复制（replication）功能允许用户根据一个 Redis 服务器来创建任意多个该服务器的复制品，其中被复制的服务器为主服务器（master），而通过复制创建出来的服务器复制品则为从服务器（slave）。 只要主从服务器之间的网络连接正常，主从服务器两者会具有相同的数据，主服务器就会一直将发生在自己身上的数据更新同步 给从服务器，从而一直保证主从服务器的数据相同。</p>
 <p>  特点：</p>
 <p>  1、master/slave 角色</p>
@@ -316,7 +318,7 @@ var themeMenus = {};
 <p>  无法保证高可用</p>
 <p>  没有解决 master 写的压力</p>
 <p>  <strong>哨兵</strong> </p>
-<p>  <strong><img src="https://img2018.cnblogs.com/blog/1481291/201809/1481291-20180925142143478-1454265814.png" alt="img"></strong> </p>
+<p>  <img src="1481291-20180925142143478-1454265814.png" alt="img"></p>
 <p>  Redis sentinel 是一个分布式系统中监控 redis 主从服务器，并在主服务器下线时自动进行故障转移。其中三个特性：</p>
 <p>  监控（Monitoring）：    Sentinel  会不断地检查你的主服务器和从服务器是否运作正常。</p>
 <p>  提醒（Notification）： 当被监控的某个 Redis 服务器出现问题时， Sentinel 可以通过 API 向管理员或者其他应用程序发送通知。</p>
